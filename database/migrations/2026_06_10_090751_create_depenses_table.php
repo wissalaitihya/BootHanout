@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('depenses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recus_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('recu_id')->constrained('recus')->cascadeOnDelete();
             $table->string('libelle');
             $table->unsignedInteger('quantite');
             $table->decimal('prix_unitaire',8,2);
